@@ -1,0 +1,109 @@
+:root {
+    --main-color: teal;
+    --text-color: #222;
+    --border-color: #999;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+h1, h2 {
+    color: var(--main-color);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.8rem;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.field label {
+    flex: 0 0 9rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"],
+input[type="email"] {
+    flex: 1;
+    max-width: 18rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 6px rgba(0, 128, 128, 0.5);
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.5rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.check {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+input[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.4rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #005f5f;
+}
+
+.sr-only {
+    position: absolute;
+    left: -9999px;
+}
+
+@media (max-width: 36rem) {
+    .field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
